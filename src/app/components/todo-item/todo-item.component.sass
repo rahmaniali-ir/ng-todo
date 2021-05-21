@@ -1,0 +1,33 @@
+.todo-item
+  align-items: center
+  cursor: pointer
+  display: flex
+  padding: 1em
+  transition: all .3s ease
+
+  &:hover
+    background-color: var(--secondary-theme)
+
+  input
+    margin-right: 1em
+
+  &.checked span
+    text-decoration: line-through
+
+  .delete
+    background-color: var(--secondary-theme)
+    border-radius: var(--radius)
+    font-size: .8em
+    margin-left: auto
+    opacity: .2
+    padding: .3em .5em
+    transition: all .3s ease
+    user-select: none
+
+  &:hover .delete
+    background-color: var(--primary-theme)
+    opacity: .7
+
+    &:hover
+      background-color: #ff1744
+      color: #fff

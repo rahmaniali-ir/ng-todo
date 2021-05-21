@@ -1,0 +1,10 @@
+<footer class="todo-add">
+  <input
+    type="text"
+    placeholder="New Task"
+    [value]="text"
+    (input)="inputChange($event)"
+    (keyup)="onEnter($event)"
+  />
+  <button [disabled]="isEmpty" (click)="addTask()">Add Task</button>
+</footer>

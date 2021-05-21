@@ -1,0 +1,18 @@
+<div class="todo-list">
+  <todo-header
+    [count]="todos.length"
+    [completed]="completedCount"
+  ></todo-header>
+
+  <div class="items">
+    <todo-item
+      *ngFor="let todo of todos"
+      [id]="todo.id"
+      [title]="todo.title"
+      [checked]="todo.completed"
+      (onDelete)="deleteTask($event)"
+    ></todo-item>
+  </div>
+
+  <todo-add (onAdd)="onAdd($event)"></todo-add>
+</div>
