@@ -3,7 +3,7 @@ import { Todo } from '../models/Todo'
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Observable } from 'rxjs'
 
-const httpOptions = {
+const headerOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
   }),
@@ -22,7 +22,11 @@ export class TodoService {
   }
 
   toggleCompleted(todo: Todo): Observable<any> {
-    return this.http.put(this.todosUrl + '/' + todo.id, todo, httpOptions)
+    return this.http.put(this.todosUrl + '/' + todo.id, todo, headerOptions)
+  }
+
+  deleteTodo(todo: Todo): Observable<any> {
+    return this.http.delete(this.todosUrl + '/' + todo.id, headerOptions)
   }
 }
 

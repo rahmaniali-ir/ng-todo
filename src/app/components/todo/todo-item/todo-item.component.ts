@@ -16,7 +16,9 @@ export class TodoItemComponent implements OnInit {
   constructor(private todoService: TodoService) {}
 
   deleteTask(): void {
-    this.onDelete.emit(this.todo.id)
+    this.todoService
+      .deleteTodo(this.todo)
+      .subscribe(() => this.onDelete.emit(this.todo.id))
   }
 
   changed(): void {
