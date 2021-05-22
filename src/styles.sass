@@ -26,18 +26,20 @@ input[type="text"], button
 
 input[type="text"]
   background-color: var(--primary-theme)
-  border: solid 1px var(--tertiary-theme)
 
 button
-  background-color: var(--primary)
+  background-color: #0003
   color: var(--primary-theme)
   cursor: pointer
   text-align: center
   transition: all .3s ease
 
+  &:hover
+    background-color: var(--primary-theme)
+    color: var(--primary)
+
   &:disabled
-    background-color: var(--tertiary-theme)
-    color: inherit
+    background-color: #0001
     cursor: default
-    opacity: .5
+    opacity: .6
     pointer-events: none
