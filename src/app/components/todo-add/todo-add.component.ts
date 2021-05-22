@@ -1,4 +1,10 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core'
+import {
+  Component,
+  OnInit,
+  Output,
+  EventEmitter,
+  ViewChild,
+} from '@angular/core'
 
 @Component({
   selector: 'todo-add',
@@ -7,6 +13,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core'
 })
 export class TodoAddComponent implements OnInit {
   @Output() onAdd = new EventEmitter<string>()
+  @ViewChild('inputBox') inputBox: any
   text: string = ''
 
   ngOnInit(): void {}
@@ -24,6 +31,7 @@ export class TodoAddComponent implements OnInit {
 
     this.onAdd.emit(this.value)
     this.text = ''
+    this.inputBox.nativeElement.focus()
   }
 
   inputChange(e: any): void {
