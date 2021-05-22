@@ -1,6 +1,8 @@
 <div class="todo-list">
   <todo-header [count]="todos.length" [completed]="completedCount">
-    <button (click)="deleteCompleted()">Delete Completed</button>
+    <button (click)="deleteCompleted()" [disabled]="completedCount === 0">
+      Delete Completed
+    </button>
   </todo-header>
 
   <todo-search [(value)]="searchKey"></todo-search>
