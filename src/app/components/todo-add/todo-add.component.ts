@@ -11,14 +11,18 @@ export class TodoAddComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  get value(): string {
+    return this.text.trim()
+  }
+
   get isEmpty(): boolean {
-    return this.text.length === 0
+    return this.value.length === 0
   }
 
   addTask(): void {
     if (this.isEmpty) return
 
-    this.onAdd.emit(this.text)
+    this.onAdd.emit(this.value)
     this.text = ''
   }
 
