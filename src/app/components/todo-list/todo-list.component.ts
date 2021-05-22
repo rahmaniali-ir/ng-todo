@@ -7,6 +7,7 @@ import { Todo } from '../../models/Todo'
   styleUrls: ['./todo-list.component.sass'],
 })
 export class TodoListComponent implements OnInit {
+  searchKey: string = ''
   todos: Todo[] = []
 
   constructor() {}
@@ -29,6 +30,13 @@ export class TodoListComponent implements OnInit {
         completed: false,
       },
     ]
+  }
+
+  get filteredTodos(): Todo[] {
+    const key = this.searchKey.trim().toLocaleLowerCase()
+    return this.todos.filter((todo) =>
+      todo.title.toLocaleLowerCase().includes(key)
+    )
   }
 
   get completedCount(): number {

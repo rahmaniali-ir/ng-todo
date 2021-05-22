@@ -5,8 +5,9 @@ import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 import { TodoListComponent } from './components/todo-list/todo-list.component'
 import { TodoItemComponent } from './components/todo-item/todo-item.component'
-import { TodoAddComponent } from './components/todo-add/todo-add.component';
+import { TodoAddComponent } from './components/todo-add/todo-add.component'
 import { TodoHeaderComponent } from './components/todo-header/todo-header.component'
+import { TodoSearchComponent } from './components/todo-search/todo-search.component'
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { TodoHeaderComponent } from './components/todo-header/todo-header.compon
     TodoItemComponent,
     TodoAddComponent,
     TodoHeaderComponent,
+    TodoSearchComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

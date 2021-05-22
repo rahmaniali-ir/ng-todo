@@ -4,9 +4,11 @@
     [completed]="completedCount"
   ></todo-header>
 
+  <todo-search [(value)]="searchKey"></todo-search>
+
   <div class="items">
     <todo-item
-      *ngFor="let todo of todos"
+      *ngFor="let todo of filteredTodos"
       [todo]="todo"
       (onDelete)="deleteTask($event)"
       (onToggle)="taskToggled($event)"
