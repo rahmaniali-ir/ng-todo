@@ -7,8 +7,34 @@
   --secondary-theme: #eee
   --tertiary-theme: #dfdfdf
 
+  --primary: #1D9A6C
+
   --radius: 4px
 
 body
   font-family: sans-serif
   margin: 0
+
+input[type="text"], button
+  border: none
+  border-radius: var(--radius)
+  display: block
+  outline: none
+  padding: 1em
+  width: 100%
+
+input[type="text"]
+  background-color: var(--primary-theme)
+
+button
+  background-color: var(--primary)
+  color: var(--primary-theme)
+  cursor: pointer
+  margin-top: 1em
+  text-align: center
+  transition: all .3s ease
+
+  &:disabled
+    background-color: var(--tertiary-theme)
+    color: inherit
+    cursor: default

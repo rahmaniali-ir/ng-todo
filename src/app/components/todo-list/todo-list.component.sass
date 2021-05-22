@@ -5,9 +5,11 @@
   display: flex
   flex-direction: column
   margin: 1em auto
-  max-height: calc(100vh - 2em)
+  height: calc(100vh - 2em)
+  overflow: hidden
+  position: relative
   width: clamp(400px, 40vw, 80vw)
 
   > .items
-    background-color: var(--primary-theme)
     overflow: auto
+    flex: 1

@@ -1,8 +1,20 @@
+@keyframes todo-in
+  100%
+    opacity: 1
+    transform: translateY(0) scale(1)
+
 .todo-item
   align-items: center
+  animation: todo-in .3s ease forwards
+  background-color: var(--primary-theme)
+  box-shadow: 0 .5em 1em #0001
   cursor: pointer
   display: flex
+  margin-bottom: 1px
+  opacity: 0
   padding: 1em
+  position: relative
+  transform: translateY(.2em)
   transition: all .3s ease
 
   &:hover
