@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { Todo } from '../../../models/Todo'
+import { TodoService } from '../../../services/todo.service'
 
 @Component({
   selector: 'todo-list',
@@ -10,26 +11,10 @@ export class TodoListComponent implements OnInit {
   searchKey: string = ''
   todos: Todo[] = []
 
-  constructor() {}
+  constructor(private todoService: TodoService) {}
 
   ngOnInit(): void {
-    this.todos = [
-      {
-        id: 1,
-        title: 'Task one',
-        completed: false,
-      },
-      {
-        id: 2,
-        title: 'Task two',
-        completed: true,
-      },
-      {
-        id: 3,
-        title: 'Task three',
-        completed: false,
-      },
-    ]
+    this.todoService.getTodos().subscribe((todos) => (this.todos = todos))
   }
 
   get filteredTodos(): Todo[] {

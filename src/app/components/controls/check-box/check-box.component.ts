@@ -15,6 +15,7 @@ import {
 })
 export class CheckBoxComponent implements OnInit {
   @Input() value: boolean = false
+  @Input() loading: boolean | null = false
   @Output() valueChange = new EventEmitter<boolean>()
 
   ngOnInit(): void {}

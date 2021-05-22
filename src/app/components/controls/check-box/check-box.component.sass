@@ -1,4 +1,8 @@
 
+@keyframes loading
+  100%
+    transform: translate(-50%, -50%) scale(.8) rotate(1turn)
+
 :host
   align-items: center
   cursor: pointer
@@ -18,6 +22,24 @@
     transition: all .2s ease
     width: 1em
 
+    &::after
+      animation: loading 1s linear infinite
+      border: solid 4px transparent
+      border-right-color: var(--primary)
+      border-bottom-color: var(--primary)
+      border-radius: 50%
+      content: ''
+      display: block
+      height: 50%
+      left: 50%
+      opacity: 0
+      pointer-events: none
+      position: absolute
+      top: 50%
+      transform: translate(-50%, -50%) scale(.8)
+      transition: all .3s ease
+      width: 50%
+
     svg
       fill: none
       opacity: 0
@@ -27,6 +49,9 @@
       stroke-dasharray: 0 100%
       transform: scale(.8)
       transition: all .3s .1s ease
+
+  &[loading] > .toggle::after
+    opacity: 1
 
   &[checked] > .toggle
     background-color: var(--primary)

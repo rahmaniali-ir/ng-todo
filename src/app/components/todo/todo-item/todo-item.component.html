@@ -1,7 +1,8 @@
 <check-box
   class="todo-item"
-  [(value)]="todo.completed"
-  (valueChange)="changed($event)"
+  [attr.loading]="loading"
+  [value]="todo.completed"
+  (valueChange)="changed()"
 >
   <span>{{ todo.title }}</span>
   <div class="delete" (click)="deleteTask()">delete</div>
