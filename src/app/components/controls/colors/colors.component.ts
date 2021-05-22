@@ -8,12 +8,20 @@ import { colors } from '../../../models/Colors'
 })
 export class ColorsComponent implements OnInit {
   colors: Array<string> = colors
-  selected: string = this.colors[0]
+  selected: string = this.getLastColor()
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.select()
+  }
 
-  select(color: string): void {
+  getLastColor(): string {
+    const local = window.localStorage.getItem('--primary')
+    return local ? local : this.colors[0]
+  }
+
+  select(color: string = this.selected): void {
     document.documentElement.style.setProperty('--primary', color)
     this.selected = color
+    window.localStorage.setItem('--primary', color)
   }
 }
