@@ -1,5 +1,5 @@
 .todo-list
-  background-color: var(--secondary-theme)
+  background-color: var(--primary)
   border: solid 3px var(--primary)
   border-radius: var(--radius)
   display: flex
@@ -8,8 +8,10 @@
   height: calc(100vh - 2em)
   overflow: hidden
   position: relative
+  transition: all .3s ease
   width: clamp(400px, 40vw, 80vw)
 
   > .items
+    background-color: var(--secondary-theme)
     overflow: auto
     flex: 1
