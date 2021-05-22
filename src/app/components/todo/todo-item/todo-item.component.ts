@@ -21,12 +21,11 @@ export class TodoItemComponent implements OnInit {
     this.onDelete.emit(this.todo.id)
   }
 
-  changed(e: any): void {
-    this.todo.completed = e.target.checked
-
+  changed(completed: boolean): void {
     this.onToggle.emit({
       id: this.todo.id,
       checked: this.todo.completed,
+      completed,
     })
   }
 

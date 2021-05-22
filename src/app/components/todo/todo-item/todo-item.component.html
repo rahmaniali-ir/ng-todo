@@ -1,10 +1,8 @@
-<label [for]="name" class="todo-item" [class.checked]="todo.completed">
-  <input
-    type="checkbox"
-    [id]="name"
-    (change)="changed($event)"
-    [checked]="todo.completed"
-  />
+<check-box
+  class="todo-item"
+  [(value)]="todo.completed"
+  (valueChange)="changed($event)"
+>
   <span>{{ todo.title }}</span>
   <div class="delete" (click)="deleteTask()">delete</div>
-</label>
+</check-box>

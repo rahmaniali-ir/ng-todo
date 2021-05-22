@@ -1,0 +1,41 @@
+
+:host
+  align-items: center
+  cursor: pointer
+  display: flex
+  user-select: none
+  width: 100%
+
+  > .toggle
+    background-color: var(--tertiary-theme)
+    border-radius: var(--radius)
+    color: var(--primary-theme)
+    display: block
+    height: 1em
+    margin: .5em
+    margin-right: 1em
+    position: relative
+    transition: all .2s ease
+    width: 1em
+
+    svg
+      fill: none
+      opacity: 0
+      stroke: currentColor
+      stroke-width: 1.2em
+      stroke-linecap: round
+      stroke-dasharray: 0 100%
+      transform: scale(.8)
+      transition: all .3s .1s ease
+
+  &[checked] > .toggle
+    background-color: var(--primary)
+
+    svg
+      opacity: 1
+      stroke-dasharray: 100% 0
+
+  > main
+    align-items: center
+    display: flex
+    flex: 1

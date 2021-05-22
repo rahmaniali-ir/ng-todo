@@ -7,7 +7,8 @@ import { TodoListComponent } from './components/todo/todo-list/todo-list.compone
 import { TodoItemComponent } from './components/todo/todo-item/todo-item.component'
 import { TodoAddComponent } from './components/todo/todo-add/todo-add.component'
 import { TodoHeaderComponent } from './components/todo/todo-header/todo-header.component'
-import { TodoSearchComponent } from './components/todo/todo-search/todo-search.component'
+import { TodoSearchComponent } from './components/todo/todo-search/todo-search.component';
+import { CheckBoxComponent } from './components/controls/check-box/check-box.component'
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { TodoSearchComponent } from './components/todo/todo-search/todo-search.c
     TodoAddComponent,
     TodoHeaderComponent,
     TodoSearchComponent,
+    CheckBoxComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
