@@ -56,6 +56,11 @@ export class TodoListComponent implements OnInit {
     })
   }
 
+  taskToggled(todo: any): void {
+    const index = this.getTodoIndexById(todo.id)
+    this.todos[index].completed = todo.checked
+  }
+
   deleteTask(id: number): void {
     this.todos.splice(this.getTodoIndexById(id), 1)
   }

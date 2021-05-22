@@ -10,6 +10,7 @@ export class TodoItemComponent implements OnInit {
   @Input() title: string = ''
   @Input() checked: boolean = false
   @Output() onDelete = new EventEmitter()
+  @Output() onToggle = new EventEmitter()
 
   constructor() {}
 
@@ -23,6 +24,11 @@ export class TodoItemComponent implements OnInit {
 
   changed(e: any): void {
     this.checked = e.target.checked
+
+    this.onToggle.emit({
+      id: this.id,
+      checked: this.checked,
+    })
   }
 
   ngOnInit(): void {}

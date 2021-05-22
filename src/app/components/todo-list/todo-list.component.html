@@ -11,6 +11,7 @@
       [title]="todo.title"
       [checked]="todo.completed"
       (onDelete)="deleteTask($event)"
+      (onToggle)="taskToggled($event)"
     ></todo-item>
   </div>
 

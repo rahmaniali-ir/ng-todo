@@ -16,6 +16,8 @@ export class TodoAddComponent implements OnInit {
   }
 
   addTask(): void {
+    if (this.isEmpty) return
+
     this.onAdd.emit(this.text)
     this.text = ''
   }

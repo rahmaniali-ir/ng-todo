@@ -16,8 +16,12 @@ export class TodoHeaderComponent implements OnInit {
   }
 
   get completedText(): string {
-    return ` / ${this.completed} Completed!`
-    // return ''
+    let completed: string = String(this.completed)
+    if (this.count === 0) return ''
+    else if (this.completed === 0) completed = 'None'
+    else if (this.completed === this.count) completed = 'All'
+
+    return ` / ${completed} Completed!`
   }
 
   get countText(): string {
