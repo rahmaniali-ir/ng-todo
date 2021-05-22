@@ -11,8 +11,29 @@
   input
     margin-right: 1em
 
+  span
+    position: relative
+
+    &::after
+      background-color: currentColor
+      content: ''
+      display: block
+      height: 1px
+      left: 50%
+      opacity: .7
+      position: absolute
+      top: 50%
+      transform: translate(-50%, -50%) scaleX(0)
+      transform-origin: left
+      transition: all .3s ease
+      width: 110%
+
   &.checked span
-    text-decoration: line-through
+    // opacity: .8
+    transform: scale(.95)
+
+    &::after
+      transform: translate(-50%, -50%) scaleX(1)
 
   .delete
     background-color: var(--secondary-theme)
