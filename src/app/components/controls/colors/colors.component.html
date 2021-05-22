@@ -1,0 +1,7 @@
+<div
+  class="color"
+  *ngFor="let color of colors"
+  [style.color]="color"
+  [class.selected]="color === selected"
+  (click)="select(color)"
+></div>

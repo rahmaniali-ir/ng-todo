@@ -1,0 +1,22 @@
+
+:host
+  align-items: center
+  display: flex
+  position: fixed
+  top: .5em
+  right: .5em
+
+  .color
+    background-color: currentColor
+    border-radius: var(--radius)
+    cursor: pointer
+    height: 1em
+    margin-left: .5em
+    transition: all .1s ease
+    width: 1em
+
+    &:hover
+      transform: scale(1.2)
+
+    &.selected
+      transform: scale(.6)
