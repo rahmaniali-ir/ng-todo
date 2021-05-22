@@ -72,4 +72,8 @@ export class TodoListComponent implements OnInit {
   deleteTask(id: number): void {
     this.todos.splice(this.getTodoIndexById(id), 1)
   }
+
+  deleteCompleted(): void {
+    this.todos = this.todos.filter((todo) => !todo.completed)
+  }
 }
