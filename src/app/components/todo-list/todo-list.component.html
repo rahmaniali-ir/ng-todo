@@ -7,9 +7,7 @@
   <div class="items">
     <todo-item
       *ngFor="let todo of todos"
-      [id]="todo.id"
-      [title]="todo.title"
-      [checked]="todo.completed"
+      [todo]="todo"
       (onDelete)="deleteTask($event)"
       (onToggle)="taskToggled($event)"
     ></todo-item>

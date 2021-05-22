@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core'
+import { Todo } from '../../models/Todo'
 
 @Component({
   selector: 'todo-item',
@@ -6,28 +7,26 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core'
   styleUrls: ['./todo-item.component.sass'],
 })
 export class TodoItemComponent implements OnInit {
-  @Input() id: number = 0
-  @Input() title: string = ''
-  @Input() checked: boolean = false
+  @Input() todo: Todo = { id: 0, title: '', completed: false }
   @Output() onDelete = new EventEmitter()
   @Output() onToggle = new EventEmitter()
 
   constructor() {}
 
   get name(): string {
-    return `task-${this.id}`
+    return `task-${this.todo.id}`
   }
 
   deleteTask(): void {
-    this.onDelete.emit(this.id)
+    this.onDelete.emit(this.todo.id)
   }
 
   changed(e: any): void {
-    this.checked = e.target.checked
+    this.todo.completed = e.target.checked
 
     this.onToggle.emit({
-      id: this.id,
-      checked: this.checked,
+      id: this.todo.id,
+      checked: this.todo.completed,
     })
   }
 
