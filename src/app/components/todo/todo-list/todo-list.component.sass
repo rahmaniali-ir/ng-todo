@@ -1,6 +1,6 @@
 .todo-list
   background-color: var(--secondary-theme)
-  border: solid 2px var(--primary)
+  border: solid 3px var(--primary)
   border-radius: var(--radius)
   display: flex
   flex-direction: column
@@ -9,6 +9,13 @@
   overflow: hidden
   position: relative
   width: clamp(400px, 40vw, 80vw)
+
+  button
+    background-color: #0002
+
+    &:hover
+      background-color: var(--primary-theme)
+      color: var(--primary)
 
   > .items
     overflow: auto

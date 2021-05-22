@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core'
+import { colors } from '../../../models/Colors'
 
 @Component({
   selector: 'colors',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core'
   styleUrls: ['./colors.component.sass'],
 })
 export class ColorsComponent implements OnInit {
-  colors: Array<string> = ['#1D9A6C', '#0E4D64', '#EB222D', '#EAAB00']
+  colors: Array<string> = colors
   selected: string = this.colors[0]
 
   ngOnInit(): void {}
